@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import FeedsWidget from './components/FeedsWidget';
+import AuditRequestForm from './components/AuditRequestForm';
 
 export const metadata = {
   title: 'DallasCircle — Hyperlocal Business Discovery',
@@ -10,7 +12,7 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 px-6 py-24 md:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 px-6 py-24 md:py-32 pt-32 md:pt-40">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-3xl -z-10"></div>
 
         <div className="mx-auto max-w-6xl">
@@ -41,6 +43,39 @@ export default function HomePage() {
                 className="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-slate-500 text-white font-semibold hover:border-slate-400 hover:bg-slate-800/50 transition"
               >
                 PHP Modernization
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Case Study Card - Proof of Success */}
+      <section className="px-6 py-0 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-12 -mt-24 relative z-10 rounded-xl border border-blue-400/30 bg-gradient-to-br from-blue-900/40 to-slate-900/40 backdrop-blur p-8 md:p-10 shadow-2xl hover:border-blue-400/50 transition">
+            <div className="grid gap-8 md:grid-cols-3">
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">$254K</div>
+                <p className="text-sm text-blue-200">Revenue Growth</p>
+                <p className="text-xs text-slate-400 mt-1">vs $200K baseline</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">12.5x</div>
+                <p className="text-sm text-blue-200">Faster Load Time</p>
+                <p className="text-xs text-slate-400 mt-1">PHP → Next.js upgrade</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">60%</div>
+                <p className="text-sm text-blue-200">Lower Hosting</p>
+                <p className="text-xs text-slate-400 mt-1">Monthly infrastructure cost</p>
+              </div>
+            </div>
+            <div className="mt-8 text-center">
+              <Link
+                href="/articles/php-modernization-case-study"
+                className="inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition text-sm"
+              >
+                See Full Case Study →
               </Link>
             </div>
           </div>
@@ -165,30 +200,76 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PHP Modernization CTA */}
-      <section className="px-6 py-20 bg-gradient-to-r from-slate-900 to-blue-900">
-        <div className="mx-auto max-w-4xl text-center space-y-8">
-          <div className="space-y-4">
-            <h2 className="text-4xl font-bold text-white">
-              Running Legacy PHP?
+      {/* Featured Articles Section */}
+      <section id="articles" className="px-6 py-20 bg-slate-50">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16 space-y-4">
+            <h2 className="text-4xl font-bold text-slate-900">
+              Featured Articles
             </h2>
-            <p className="text-xl text-slate-200">
-              We modernize old PHP sites to modern Next.js in 2 weeks for $999. Free audit included.
+            <p className="text-lg text-slate-600 max-w-2xl">
+              Learn from real case studies and industry insights to grow your Dallas business online.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/php-rescue"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-white text-slate-900 font-semibold hover:bg-slate-100 transition"
-            >
-              Learn More
-            </Link>
-            <a
-              href="mailto:hello@dallascircle.com"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg border border-white text-white font-semibold hover:bg-white/10 transition"
-            >
-              Start Audit
-            </a>
+
+          <FeedsWidget />
+        </div>
+      </section>
+
+      {/* PHP Modernization CTA */}
+      <section className="px-6 py-20 bg-gradient-to-r from-slate-900 to-blue-900">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-12 md:grid-cols-2 items-center">
+            <div className="space-y-6">
+              <h2 className="text-4xl font-bold text-white">
+                Running Legacy PHP?
+              </h2>
+              <p className="text-xl text-slate-200">
+                We modernize old PHP sites to modern Next.js in 2 weeks for $999. Free audit included.
+              </p>
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <div>
+                    <p className="font-semibold text-white">12.5x Faster</p>
+                    <p className="text-sm text-slate-300">Next.js vs legacy PHP performance</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <div>
+                    <p className="font-semibold text-white">60% Cost Savings</p>
+                    <p className="text-sm text-slate-300">Lower hosting and infrastructure costs</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <div>
+                    <p className="font-semibold text-white">2 Week Turnaround</p>
+                    <p className="text-sm text-slate-300">Fixed price, guaranteed timeline</p>
+                  </div>
+                </div>
+              </div>
+              <Link
+                href="/php-rescue"
+                className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-white text-slate-900 font-semibold hover:bg-slate-100 transition"
+              >
+                Learn More
+              </Link>
+            </div>
+
+            <div>
+              <div className="bg-slate-800/50 rounded-xl p-8 border border-slate-700/50">
+                <h3 className="text-xl font-bold text-white mb-6">Request Free Audit</h3>
+                <AuditRequestForm />
+              </div>
+            </div>
           </div>
         </div>
       </section>
