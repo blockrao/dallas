@@ -22,6 +22,9 @@ export default function Header() {
           <Link href="/" className="text-slate-300 hover:text-white transition text-sm font-medium">
             Home
           </Link>
+          <Link href="/about" className="text-slate-300 hover:text-white transition text-sm font-medium">
+            About
+          </Link>
           <Link href="#articles" className="text-slate-300 hover:text-white transition text-sm font-medium">
             Articles
           </Link>
@@ -56,6 +59,9 @@ export default function Header() {
           <div className="mx-auto max-w-6xl px-6 py-4 flex flex-col gap-4">
             <Link href="/" className="text-slate-300 hover:text-white transition text-sm font-medium">
               Home
+            </Link>
+            <Link href="/about" className="text-slate-300 hover:text-white transition text-sm font-medium">
+              About
             </Link>
             <Link href="#articles" className="text-slate-300 hover:text-white transition text-sm font-medium">
               Articles

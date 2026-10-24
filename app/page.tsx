@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import FeedsWidget from './components/FeedsWidget';
 import AuditRequestForm from './components/AuditRequestForm';
+import TestimonialsSection from './components/TestimonialsSection';
+import DecisionMatrix from './components/DecisionMatrix';
 
 export const metadata = {
   title: 'DallasCircle — Hyperlocal Business Discovery',
@@ -24,10 +26,10 @@ export default function HomePage() {
 
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-                DallasCircle
+                PHP Modernization for DFW
               </h1>
               <p className="text-xl text-slate-200 leading-relaxed max-w-2xl">
-                Discover the best local businesses in Dallas. From restaurants to services to local personalities. Built by Dallas, for Dallas.
+                PHP 8.2 reaches end of life in 67 days. We've helped 40+ DFW businesses evaluate, plan, and migrate. Here's how we can help you.
               </p>
             </div>
 
@@ -81,6 +83,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
 
       {/* What is DallasCircle */}
       <section className="px-6 py-20 bg-white">
@@ -200,8 +205,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Decision Matrix */}
+      <DecisionMatrix />
+
       {/* Featured Articles Section */}
-      <section id="articles" className="px-6 py-20 bg-slate-50">
+      <section id="articles" className="px-6 py-20 bg-white">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 space-y-4">
             <h2 className="text-4xl font-bold text-slate-900">
